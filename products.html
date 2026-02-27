@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Classical Formulations | Satyam Ayurvedics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: '#B36A5E',
+                        sand: '#E2D1B3',
+                        brandDark: '#2D2926',
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'reveal': 'reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+                    },
+                    keyframes: {
+                        reveal: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)', filter: 'blur(8px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)', filter: 'blur(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #E2D1B3; color: #2D2926; scroll-behavior: smooth; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .organic-frame { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+        .group:hover .organic-frame { border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%; transform: rotate(3deg) scale(0.9); }
+        #mobile-menu { transform: translateX(100%); transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        #mobile-menu.active { transform: translateX(0); }
+        .stagger-item { opacity: 0; }
+        .reveal-active { animation: reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+<!-- navigation start -->
+<nav class="fixed top-0 w-full z-50 glass border-b border-terracotta/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <a href="./index.html">
+                <img src="logo.png" alt="Logo" class="h-12 w-auto object-contain hover:scale-110 transition-transform duration-300"/>
+            </a>
+        </div>
+
+<div class="hidden md:flex items-center space-x-8">
+    <a href="./gallery.html" class="text-sm uppercase tracking-wider font-bold hover:text-terracotta transition-colors">Gallery</a>
+    <a href="./journey.html" class="text-sm uppercase tracking-wider font-bold hover:text-terracotta transition-colors">Our Journey</a>
+    <a href="./products.html" class="text-sm uppercase tracking-wider font-bold hover:text-terracotta transition-colors">Products</a>
+    <a href="./licences.html" class="text-sm uppercase tracking-wider font-bold hover:text-terracotta transition-colors">Licences</a>
+    <a href="./about-us.html" class="text-sm uppercase tracking-wider font-bold hover:text-terracotta transition-colors">About Us</a>
+    <a href="./contact.html" class="bg-terracotta text-white px-6 py-2 rounded-full text-sm uppercase tracking-wider font-bold hover:bg-brandDark transition-all">Contact Us</a>
+</div>
+
+        <button id="menu-btn" class="md:hidden text-terracotta p-2">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </div>
+</nav>
+
+<div id="mobile-menu" class="fixed inset-0 z-[60] bg-brandDark flex flex-col items-center justify-center space-y-8 md:hidden">
+    <button id="close-btn" class="absolute top-6 right-6 text-sand p-2">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    
+    <a href="./gallery.html" class="mobile-link text-3xl text-sand font-heading">Gallery</a>
+    <a href="./journey.html" class="mobile-link text-3xl text-sand font-heading">Our Journey</a>
+    <a href="./products.html" class="mobile-link text-3xl text-sand font-heading">Products</a>
+    <a href="./licences.html" class="mobile-link text-3xl text-sand font-heading">Licences</a>
+    <a href="./about-us.html" class="mobile-link text-3xl text-sand font-heading">About Us</a>
+    <a href="./contact.html" class="mobile-link text-3xl text-terracotta font-heading font-bold">Contact Us</a>
+</div>
+<!-- navigation end -->
+
+<main class="pt-20">
+    <section class="py-24 px-6 max-w-5xl mx-auto text-center stagger-item">
+        <div class="mb-6 flex justify-center items-center gap-4">
+            <div class="h-px w-8 bg-terracotta/40"></div>
+            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-terracotta">Established 1958</span>
+            <div class="h-px w-8 bg-terracotta/40"></div>
+        </div>
+        <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brandDark mb-10 leading-tight">Preserving Ancient Wisdom <br/> with Modern Precision</h2>
+        
+        <div class="space-y-8 text-brandDark/80 text-lg leading-relaxed max-w-4xl mx-auto text-center">
+            <p class="italic">
+                "Satyam Ayurvedics is a reputed name in classical medicine manufacturing, established in 1958 in Kachaura by <b>Mr. Satendra Raghav</b>. Today, <b>Dr. Ashish Raghav (BAMS)</b> continues this legacy, blending traditional methods with a modern scientific approach. We specialize in pure Bhasma, Kuppipakva Rasayan, and other classical formulations prepared using high-quality raw materials for maximum safety and effectiveness."
+            </p>
+        </div>
+    </section>
+
+    <section class="pb-16 px-6 max-w-7xl mx-auto stagger-item">
+        <div class="relative max-w-2xl mx-auto group">
+            <span class="material-symbols-rounded absolute left-6 top-1/2 -translate-y-1/2 text-terracotta">search</span>
+            <input type="text" id="global-search" placeholder="Search for Kupipakva, Bhasma, Vati..." 
+                class="w-full pl-16 pr-8 py-6 bg-white/50 border-2 border-transparent focus:border-terracotta/20 focus:bg-white rounded-[2rem] shadow-sm transition-all outline-none text-lg">
+        </div>
+    </section>
+
+    <section class="pb-32 px-6 max-w-7xl mx-auto">
+        <div id="active-filter-bar" class="hidden animate-reveal mb-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <span class="text-[10px] font-black text-terracotta uppercase tracking-[0.3em] mb-2 block">Catalog Selection</span>
+                    <h2 id="category-title" class="font-heading text-4xl font-black text-brandDark"></h2>
+                </div>
+                <button id="reset-view" class="flex items-center gap-3 bg-brandDark text-sand px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-terracotta transition-all shadow-lg">
+                    <span class="material-symbols-rounded text-sm">arrow_back</span> Back to All Categories
+                </button>
+            </div>
+            
+            <div id="category-context-box" class="mt-10 p-10 bg-white/60 rounded-[3rem] border-2 border-white border-dashed flex flex-col md:flex-row gap-8 items-center">
+                <div id="context-icon-container" class="w-24 h-24 rounded-full bg-terracotta text-white flex items-center justify-center shrink-0">
+                    <span id="context-icon" class="material-symbols-rounded text-5xl">science</span>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-xl text-brandDark mb-2">Category Overview</h4>
+                    <p id="context-desc" class="text-brandDark/70 leading-relaxed italic"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="main-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            </div>
+    </section>
+</main>
+<footer id="contact" class="bg-brandDark pt-20 pb-10 text-sand overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            
+            <div class="footer-reveal space-y-6">
+                <a href="./index.html" class="inline-block">
+                    <img src="logo.png" alt="Satyam Logo" class="h-16 w-auto brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"/>
+                </a>
+                <p class="text-sm leading-relaxed opacity-60">
+                    Bridging the sacred traditions of Ayurveda with the precision of modern science. Sourced from the Himalayas, perfected in our labs.
+                </p>
+                <div class="flex gap-4">
+    <a href="https://wa.me/YOUR_NUMBER" target="_blank" class="p-2 rounded-full border border-sand/10 hover:border-terracotta hover:text-terracotta transition-all">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+        </svg>
+    </a>
+</div>
+            </div>
+
+            <div class="footer-reveal space-y-6">
+                <h4 class="font-heading font-bold text-sm uppercase tracking-widest text-terracotta">Navigation</h4>
+                <ul class="space-y-4 text-sm opacity-60">
+                    <li><a href="./contact.html" class="hover:text-sand hover:opacity-100 transition-all">Contact Us</a></li>
+                    <li><a href="./about-us.html" class="hover:text-sand hover:opacity-100 transition-all">About Us</a></li>
+                    <li><a href="./gallery.html" class="hover:text-sand hover:opacity-100 transition-all">Gallery</a></li>
+                    <li><a href="./licences.html" class="hover:text-sand hover:opacity-100 transition-all">License</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-reveal space-y-6">
+                <h4 class="font-heading font-bold text-sm uppercase tracking-widest text-terracotta">Location</h4>
+                <ul class="space-y-4 text-sm opacity-60">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-terracotta mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-width="2"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2"/></svg>
+                        <span>Satyam ayurvedics<br/>Kachoura, Uttar Pradesh, 204211</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="2"/></svg>
+                        satyamayurvedics98@gmail.com
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-reveal space-y-4">
+                <h4 class="font-heading font-bold text-sm uppercase tracking-widest text-terracotta">Find Us</h4>
+                <div class="w-full h-64 rounded-2xl overflow-hidden grayscale invert opacity-80 hover:grayscale-0 hover:invert-0 hover:opacity-100 transition-all duration-700 shadow-lg border border-white/5">
+                    <iframe
+                        src="https://maps.google.com/maps?width=350&height=313&hl=en&q=Satyam ayurvedics, Kachoura, Uttar Pradesh 204211&t=h&z=12&ie=UTF8&iwloc=B&output=embed"
+                        class="w-full h-full border-0"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest opacity-40">
+            <p>© 2026 Satyam Ayurvedics. All rights reserved.</p>
+            <div class="flex gap-6">
+                <button id="privacy-trigger" class="hover:text-sand transition-colors cursor-pointer">Privacy Policy</button>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- js footer -->
+<script>
+    const footerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const columns = entry.target.querySelectorAll('.footer-reveal');
+            columns.forEach((col, index) => {
+                setTimeout(() => {
+                    col.style.opacity = '1';
+                    col.style.transform = 'translateY(0)';
+                }, index * 150); // 150ms stagger
+            });
+        }
+    });
+}, { threshold: 0.1 });
+
+const footer = document.querySelector('footer');
+document.querySelectorAll('.footer-reveal').forEach(col => {
+    col.style.opacity = '0';
+    col.style.transform = 'translateY(20px)';
+    col.style.transition = 'all 0.8s cubic-bezier(0.22, 1, 0.36, 1)';
+});
+footerObserver.observe(footer);
+</script>
+<!-- js footer end -->
+
+<script>
+    const data = [
+    { 
+        id: 1, 
+        name: "Kupipakva Rasayan", 
+        icon: "science", 
+        image: "./products/Kupipakva-Rasayana.jpg", 
+        desc: "Kupipakva Rasayans are highly potent, classical herbo-mineral preparations processed in a specially designed glass bottle (Kupi). They are prepared using a controlled heating process in a sand bath (Valuka Yantra) to achieve a stable and potent medicinal form. These formulations primarily utilize purified mercury (Parada) and sulphur (Gandhak) for their quick-acting therapeutic properties. They are widely used in treating chronic diseases, immune deficiencies, and respiratory disorders. Common examples include Ras Sindoor and Makardhwaj, renowned for their rejuvenating and vitality-enhancing effects.", 
+        products: ["Rasa Sindoor", "Makaradhwaja", "Swarna Vanga", "Samir Pannag Ras"] 
+    },
+    { 
+        id: 2, 
+        name: "Precious Bhasma & Pishti", 
+        icon: "diamond", 
+        image: "./products/bhasma-pishti.jpg", 
+        desc: "Precious Bhasmas and Pishtis are highly refined mineral and gemstone preparations processed through traditional incineration or trituration methods. Bhasma represents a calcined ash form of metals and minerals, while Pishti is a finely levigated powder prepared without intense heat. These formulations are distinguished by their rapid absorption, low dosage requirements, and remarkably long shelf life. They are commonly prescribed for chronic disorders, anemia, and cardiac weakness to enhance bioavailability. Examples include Abhrak Bhasma and Mukta Pishti, which maximize therapeutic potency while minimizing toxicity.", 
+        products: ["Mukta Pishti", "Praval Bhasma", "Akik Pishti", "Jahar Mohra"] 
+    },
+    { 
+        id: 3, 
+        name: "Gold Preparations (Swarn Yog)", 
+        icon: "star", 
+        image: "./products/swarn-bhasma.jpg", 
+        desc: "Gold preparations, or Swarn Yog, represent a prestigious category of Ayurvedic medicine involving the use of purified gold for deep cellular rejuvenation. These formulations are traditionally used to enhance immunity, improve cognitive functions, and act as a powerful catalyst for other herbs. Due to the noble properties of gold, these medicines are often prescribed for vital organ support and complex autoimmune conditions. In Ayurveda, gold is believed to balance all three Doshas and provide a natural glow to the skin. They are considered the pinnacle of Rasayana (rejuvenation) therapy for their life-prolonging benefits.", 
+        products: ["Swarn Bhasma", "Vasant Kusumakar Ras", "Swarn Malini Vasant", "Brahmi Vati with Gold"] 
+    },
+    { 
+        id: 4, 
+        name: "Bhasma & Pishti", 
+        icon: "volcano", 
+        image: "./products/bhasma.jpg", 
+        desc: "Bhasma and Pishti are essential Ayurvedic preparations that transform raw minerals into biocompatible, non-toxic medicinal forms. Bhasma is created through a rigorous process of purification (Shodhana) followed by high-heat incineration (Marana). Pishti is prepared by grinding minerals with herbal liquids like rose water under sunlight or moon-light until a fine powder is formed. These preparations are known for their ability to reach deep tissues and provide immediate relief in pitta-related and chronic ailments. Notable examples include Godanti Bhasma and Akik Pishti, which ensure safety and efficacy in various treatments.", 
+        products: ["Abhrak Bhasma", "Lauh Bhasma", "Mandur Bhasma", "Godanti Bhasma"] 
+    },
+    { 
+        id: 5, 
+        name: "Parpati", 
+        icon: "layers", 
+        image: "./products/parpati.jpg", 
+        desc: "Parpati is a specialized Ayurvedic preparation made by melting purified mercury and sulphur (Kajjali) into thin, flake-like forms. This unique pharmaceutical form is created through a controlled heating and cooling process on a banana leaf. Parpati formulations are especially effective in gastrointestinal disorders due to their deep digestive action in the intestines. They are traditionally used to treat conditions like Grahani (IBS), malabsorption syndrome, and chronic diarrhea. Common examples include Panchamrit Parpati and Rasa Parpati, which help regulate bowel function and improve Agni.", 
+        products: ["Panchamrit Parpati", "Shweta Parpati", "Lauh Parpati"] 
+    },
+    { 
+        id: 6, 
+        name: "Kharliya Rasayan", 
+        icon: "heap_snapshot_multiple", 
+        image: "./products/kharliya-rasayan.jpg", 
+        desc: "Kharliya Rasayans are herbo-mineral formulations prepared by continuous trituration (Mardana) in a mortar and pestle (Khalva Yantra). This process involves grinding minerals with specific herbal juices or decoctions to achieve a very fine particle size. The Bhavana (trituration) process increases the potency of the ingredients and ensures better assimilation in the body. These formulations do not require intense heating and are widely used for fevers, liver disorders, and metabolic conditions. Popular examples include Arogyawardhani Vati and Tribhuvan Kirti Ras.", 
+        products: ["Yogendra Ras", "Hridayarnava Ras", "Kamdudha Ras"] 
+    },
+    { 
+        id: 7, 
+        name: "Gutika & Vati", 
+        icon: "pill", 
+        image: "./products/Vati-Gutika.jpg", 
+        desc: "Gutika and Vati are classical Ayurvedic tablets or pill forms prepared by mixing fine herbal powders with binding agents. The mixture is rolled into uniform doses that are convenient to consume, easy to store, and provide accurate dosing. They are commonly used to manage digestive issues, urinary problems, joint diseases, and general health. Due to their solid form, these pills have a longer shelf life and maintain stable therapeutic potency over time. Examples include Chandraprabha Vati, Yograj Guggulu, and Sanjivani Vati.", 
+        products: ["Chandraprabha Vati", "Arogyavardhini Vati", "Sanjivani Vati"] 
+    },
+    { 
+        id: 8, 
+        name: "Loh & Mandoor Yog", 
+        icon: "construction", 
+        image: "./products/loh-mandor.jpeg", 
+        desc: "Loh and Mandoor Yog are iron-based formulations primarily used for treating anemia (Pandu), liver disorders, and general weakness. Lauh refers to purified iron preparations, while Mandoor is processed iron oxide used in classical medicine. These formulations are designed to improve hemoglobin levels, enhance digestion, and support overall liver function. They are often combined with specific herbal ingredients to improve absorption and reduce potential side effects. Common examples include Punarnava Mandoor and Navayasa Lauh.", 
+        products: ["Punarnava Mandur", "Saptamrit Lauh", "Navayas Lauh"] 
+    },
+    { 
+        id: 9, 
+        name: "Guggul Preparations", 
+        icon: "spa", 
+        image: "./products/guggul.png", 
+        desc: "Guggul formulations are prepared using the purified resin of Commiphora mukul, known for its potent detoxifying properties. Guggul acts as a Yogavahi, meaning it enhances the action of other herbs in the formulation while carrying them to specific tissues. These preparations are widely used in managing joint pain, arthritis, obesity, and thyroid imbalances. They help reduce Ama (toxins), improve metabolism, and support joint health by reducing inflammation. Examples include Kanchanar Guggulu, Kaishore Guggulu, and Triphala Guggulu.", 
+        products: ["Triphala Guggul", "Kaishore Guggul", "Yograj Guggul", "Singhnad Guggul"] 
+    },
+    { 
+        id: 10, 
+        name: "Churna (Powders)", 
+        icon: "grain", 
+        image: "./products/churna.jpg", 
+        desc: "Churna is a finely powdered herbal formulation prepared by drying and grinding medicinal herbs into a uniform consistency. Due to its small particle size, it provides faster absorption and effective therapeutic action in the digestive tract. Churnas are commonly used for constipation, indigestion, acidity, bloating, and detoxification. These powders stimulate digestive enzymes, improve gut health, and help balance the three Doshas. Well-known examples include Triphala Churna, Sitopaladi Churna, and Avipattikar Churna.", 
+        products: ["Avipattikar Churna", "Sitopaladi Churna", "Trikatu Churna"] 
+    },
+    { 
+        id: 11, 
+        name: "Kshar", 
+        icon: "water_drop", 
+        image: "./products/kshar.jpg", 
+        desc: "Kshar is an alkaline Ayurvedic preparation obtained from the ash of medicinal plants through a specialized purification process. It possesses strong Lekhana (scraping), Chedana (cutting), and Bhedana (penetrating) properties. These preparations are primarily used in the treatment of piles, urinary disorders, and certain surgical applications. Kshar is highly effective in dissolving stones and clearing blockages in the internal channels of the body. Examples include Yavakshar and Tankan Kshar, used under strict clinical supervision.", 
+        products: ["Apamarga Kshar", "Yava Kshar", "Ksharpala"] 
+    },
+    { 
+        id: 12, 
+        name: "Pak & Avleh", 
+        icon: "breakfast_dining", 
+        image: "./products/aleva.png", 
+        desc: "Pak and Avaleha are semi-solid Ayurvedic formulations prepared using herbal decoctions, jaggery or sugar, and medicinal spices. These formulations are palatable, nourishing, and suitable for long-term use to build strength and immunity. They are commonly used for respiratory disorders, immunity boosting, and rejuvenation therapy (Rasayana). Their sweet base enhances patient compliance and adds therapeutic value by acting as a nutritive tonic. Examples include the famous Chyawanprash and Vasavaleh.", 
+        products: ["Chyawanprash", "Brahma Rasayan", "Kutajavleha"] 
+    },
+    { 
+        id: 13, 
+        name: "Ayurvedic Oils (Taila)", 
+        icon: "opacity", 
+        image: "./products/oils.png", 
+        desc: "Ayurvedic medicated oils are prepared through the Sneha Paka method by processing herbal decoctions and pastes with base oils. Common base oils include sesame, coconut, or castor oil, which are processed until the oil absorbs the herbal properties. These oils are used for both internal consumption and external therapies like Abhyanga (massage) and Nasya. They are highly effective in treating Vata disorders, neurological conditions, and joint pain. Examples include Mahanarayan Tail and Brahmi Tail.", 
+        products: ["Mahanarayan Taila", "Anu Taila", "Kshirbala Taila"] 
+    },
+    { 
+        id: 14, 
+        name: "Kwath (Decoctions)", 
+        icon: "coffee", 
+        image: "./products/kwath.png", 
+        desc: "Kwath is a classical herbal decoction prepared by boiling coarse herbal drugs in water until the volume reduces significantly. Traditionally, the water is reduced to one-fourth of its original volume to concentrate the active herbal principles. It is considered one of the most effective liquid dosage forms in Ayurveda due to its quick action. Kwath is widely used in treating fevers, inflammation, respiratory diseases, and metabolic disorders. Examples include Dashmool Kwath and Panchatikta Kwath.", 
+        products: ["Maharasnadi Kwath", "Dashmool Kwath", "Punarnavadi Kwath"] 
+    }
+];
+
+    const mainGrid = document.getElementById('main-grid');
+    const filterBar = document.getElementById('active-filter-bar');
+    const categoryTitle = document.getElementById('category-title');
+    const contextDesc = document.getElementById('context-desc');
+    const contextIcon = document.getElementById('context-icon');
+    const resetBtn = document.getElementById('reset-view');
+    const searchInput = document.getElementById('global-search');
+
+    function renderCategories(filter = '') {
+        filterBar.classList.add('hidden');
+        const filtered = data.filter(c => 
+            c.name.toLowerCase().includes(filter.toLowerCase()) || 
+            c.products.some(p => p.toLowerCase().includes(filter.toLowerCase()))
+        );
+        
+        mainGrid.innerHTML = filtered.map((c, i) => `
+            <div class="group relative bg-white/40 p-10 rounded-[3rem] border border-terracotta/10 hover:border-terracotta/30 hover:bg-white transition-all duration-700 cursor-pointer animate-reveal overflow-hidden" 
+                style="animation-delay: ${i * 0.08}s" onclick="openCategory(${c.id})">
+                
+                <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    <img src="${c.image}" alt="${c.name}" class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 brightness-[0.25]">
+                </div>
+
+                <div class="relative z-10 transition-colors duration-500 group-hover:text-white">
+                    <div class="organic-frame w-20 h-20 bg-terracotta/5 flex items-center justify-center text-terracotta group-hover:bg-white group-hover:text-terracotta transition-all duration-700 mb-8">
+                        <span class="material-symbols-rounded text-4xl">${c.icon}</span>
+                    </div>
+                    <h3 class="font-heading text-2xl font-black mb-3">${c.name}</h3>
+                    <p class="text-sm opacity-50 leading-relaxed mb-8 group-hover:opacity-80 transition-opacity">Discover our heritage-grade ${c.name} formulations.</p>
+                    <div class="flex items-center gap-3 text-terracotta font-bold text-[10px] uppercase tracking-[0.3em] group-hover:text-white transition-colors">
+                        Explore Catalog <span class="material-symbols-rounded text-sm">arrow_forward</span>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    window.openCategory = function(id) {
+        const cat = data.find(c => c.id === id);
+        filterBar.classList.remove('hidden');
+        categoryTitle.innerText = cat.name;
+        contextDesc.innerText = cat.desc;
+        contextIcon.innerText = cat.icon;
+        
+        mainGrid.innerHTML = cat.products.map((p, i) => `
+            <div class="bg-white/70 p-10 rounded-[2.5rem] border border-terracotta/10 animate-reveal shadow-sm flex flex-col justify-between" style="animation-delay: ${i * 0.05}s">
+                <div>
+                    <span class="text-[9px] font-black text-terracotta uppercase tracking-[0.4em] mb-4 block">Official Formulation</span>
+                    <h4 class="font-heading text-xl font-bold text-brandDark mb-6">${p}</h4>
+                </div>
+                <a href="./contact.html" class="flex items-center justify-center gap-2 bg-brandDark text-sand py-4 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-terracotta hover:text-white transition-all shadow-md">
+                    <span class="material-symbols-rounded text-sm">mail</span> Request Quote
+                </a>
+            </div>
+        `).join('');
+        window.scrollTo({ top: 400, behavior: 'smooth' });
+    }
+
+    searchInput.addEventListener('input', (e) => renderCategories(e.target.value));
+    resetBtn.addEventListener('click', () => { searchInput.value = ''; renderCategories(); });
+    
+    // Final check for on-scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('reveal-active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.stagger-item').forEach(el => observer.observe(el));
+
+    renderCategories();
+
+    const mbBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mbMenu = document.getElementById('mobile-menu');
+    mbBtn.onclick = () => mbMenu.classList.add('active');
+    closeBtn.onclick = () => mbMenu.classList.remove('active');
+</script>
+</body>
+</html>

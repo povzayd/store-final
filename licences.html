@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Quality Assurance | Satyam Ayurvedics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: '#B36A5E',
+                        sand: '#E2D1B3',
+                        brandDark: '#2D2926',
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #E2D1B3; color: #2D2926; scroll-behavior: smooth; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.18); }
+        .organic-frame { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+        .group:hover .organic-frame { border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%; transform: rotate(2deg) scale(1.02); }
+        
+        #mobile-menu { transform: translateX(100%); transition: transform 0.5s ease; }
+        #mobile-menu.active { transform: translateX(0); }
+
+        /* Smooth reveal animation */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Modal animation */
+        #cert-modal { opacity: 0; pointer-events: none; transition: all 0.4s ease; }
+        #cert-modal.active { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+<!-- navigation start -->
+<nav class="fixed top-0 w-full z-50 glass border-b border-terracotta/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <a href="./index.html">
+                <img src="logo.png" alt="Logo" class="h-12 w-auto object-contain hover:scale-110 transition-transform duration-300"/>
+            </a>
+        </div>
+
+<div class="hidden md:flex items-center space-x-8">
+    <a href="./gallery.html" class="text-sm uppercase tracking-wider font-bold hover:text-terracotta transition-colors">Gallery</a>
+    <a href="./journey.html" class="text-sm uppercase tracking-wider font-bold hover:text-terracotta transition-colors">Our Journey</a>
+    <a href="./products.html" class="text-sm uppercase tracking-wider font-bold hover:text-terracotta transition-colors">Products</a>
+    <a href="./licences.html" class="text-sm uppercase tracking-wider font-bold hover:text-terracotta transition-colors">Licences</a>
+    <a href="./about-us.html" class="text-sm uppercase tracking-wider font-bold hover:text-terracotta transition-colors">About Us</a>
+    <a href="./contact.html" class="bg-terracotta text-white px-6 py-2 rounded-full text-sm uppercase tracking-wider font-bold hover:bg-brandDark transition-all">Contact Us</a>
+</div>
+
+        <button id="menu-btn" class="md:hidden text-terracotta p-2">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </div>
+</nav>
+
+<div id="mobile-menu" class="fixed inset-0 z-[60] bg-brandDark flex flex-col items-center justify-center space-y-8 md:hidden">
+    <button id="close-btn" class="absolute top-6 right-6 text-sand p-2">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    
+    <a href="./gallery.html" class="mobile-link text-3xl text-sand font-heading">Gallery</a>
+    <a href="./journey.html" class="mobile-link text-3xl text-sand font-heading">Our Journey</a>
+    <a href="./products.html" class="mobile-link text-3xl text-sand font-heading">Products</a>
+    <a href="./licences.html" class="mobile-link text-3xl text-sand font-heading">Licences</a>
+    <a href="./about-us.html" class="mobile-link text-3xl text-sand font-heading">About Us</a>
+    <a href="./contact.html" class="mobile-link text-3xl text-terracotta font-heading font-bold">Contact Us</a>
+</div>
+<!-- navigation end -->
+<main class="pt-20">
+    <section class="py-24 px-6 max-w-7xl mx-auto text-center reveal">
+        <div class="inline-flex items-center gap-2 mb-6 px-4 py-1 rounded-full bg-white/30 border border-terracotta/10">
+            <span class="w-2 h-2 rounded-full bg-terracotta animate-pulse"></span>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-brandDark">GMP Verified Manufacturing</span>
+        </div>
+        <h1 class="font-heading text-5xl md:text-7xl font-extrabold text-brandDark mb-8 leading-tight">
+            Purity <span class="text-terracotta italic">Protocol</span>
+        </h1>
+        <p class="text-lg text-brandDark/60 max-w-3xl mx-auto leading-relaxed italic">
+            "We are dedicated to preserving the authenticity of traditional Ayurveda while maintaining the highest standards of quality and purity."
+        </p>
+    </section>
+
+    <section class="py-24 px-6 max-w-7xl mx-auto border-t border-terracotta/10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <div class="group bg-white/40 p-10 rounded-[3rem] border border-terracotta/5 hover:bg-white hover:border-terracotta/20 transition-all duration-700 reveal cursor-pointer" 
+                 onclick="openCert('AYUSH Manufacturing License', 'ayush-license.png', 'Active license for classical Ayurvedic medicine manufacturing.')">
+                <div class="organic-frame w-20 h-20 bg-terracotta/5 flex items-center justify-center text-terracotta mb-8 group-hover:bg-terracotta group-hover:text-white transition-all duration-700">
+                    <span class="material-symbols-rounded text-4xl">verified_user</span>
+                </div>
+                <h3 class="font-heading text-2xl font-bold text-brandDark mb-3">AYUSH License</h3>
+                <p class="text-sm text-brandDark/50 mb-8 uppercase tracking-widest font-bold">Registration: 123/AYU/2024</p>
+                <div class="flex items-center gap-2 text-terracotta font-black text-[10px] uppercase tracking-widest">
+                    Inspect Document <span class="material-symbols-rounded text-sm">fullscreen</span>
+                </div>
+            </div>
+
+            <div class="group bg-white/40 p-10 rounded-[3rem] border border-terracotta/5 hover:bg-white hover:border-terracotta/20 transition-all duration-700 reveal cursor-pointer" 
+                 onclick="openCert('FSSAI Central License', 'fssai-license.png', 'Certified for food safety and herbal nutraceutical standards.')" style="transition-delay: 100ms;">
+                <div class="organic-frame w-20 h-20 bg-terracotta/5 flex items-center justify-center text-terracotta mb-8 group-hover:bg-terracotta group-hover:text-white transition-all duration-700">
+                    <span class="material-symbols-rounded text-4xl">health_and_safety</span>
+                </div>
+                <h3 class="font-heading text-2xl font-bold text-brandDark mb-3">FSSAI License</h3>
+                <p class="text-sm text-brandDark/50 mb-8 uppercase tracking-widest font-bold">10023456789123</p>
+                <div class="flex items-center gap-2 text-terracotta font-black text-[10px] uppercase tracking-widest">
+                    Inspect Document <span class="material-symbols-rounded text-sm">fullscreen</span>
+                </div>
+            </div>
+
+            <div class="group bg-white/40 p-10 rounded-[3rem] border border-terracotta/5 hover:bg-white hover:border-terracotta/20 transition-all duration-700 reveal cursor-pointer" 
+                 onclick="openCert('GMP Certificate', 'gmp-cert.png', 'Good Manufacturing Practices audit for fiscal year 2026.')" style="transition-delay: 200ms;">
+                <div class="organic-frame w-20 h-20 bg-terracotta/5 flex items-center justify-center text-terracotta mb-8 group-hover:bg-terracotta group-hover:text-white transition-all duration-700">
+                    <span class="material-symbols-rounded text-4xl">inventory</span>
+                </div>
+                <h3 class="font-heading text-2xl font-bold text-brandDark mb-3">GMP Standards</h3>
+                <p class="text-sm text-brandDark/50 mb-8 uppercase tracking-widest font-bold">Batch Consistency Control</p>
+                <div class="flex items-center gap-2 text-terracotta font-black text-[10px] uppercase tracking-widest">
+                    Inspect Document <span class="material-symbols-rounded text-sm">fullscreen</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto bg-brandDark rounded-[60px] overflow-hidden flex flex-col lg:flex-row items-center shadow-3xl reveal">
+            <div class="flex-1 p-16 md:p-24">
+                <span class="text-terracotta font-black text-[10px] uppercase tracking-[0.4em] mb-4 block">Scientific Oversight</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-sand mb-8 leading-tight">
+                    Beyond Classical <br/> <span class="text-terracotta italic">Methodology</span>
+                </h2>
+                <p class="text-sand/60 text-lg mb-12 leading-relaxed">
+                    Managed by <b>Dr. Ashish Raghav (BAMS)</b>, we continue the legacy with a modern scientific approach. Our in-house facility utilizes advanced chromatography to eliminate heavy metal contamination.
+                </p>
+                <div class="grid grid-cols-2 gap-8 border-t border-white/5 pt-12">
+                    <div>
+                        <h4 class="text-terracotta font-bold text-xs uppercase mb-2">Lead & Mercury</h4>
+                        <p class="text-sand/40 text-[10px]">Zero Contamination Target</p>
+                    </div>
+                    <div>
+                        <h4 class="text-terracotta font-bold text-xs uppercase mb-2">Bio-Potency</h4>
+                        <p class="text-sand/40 text-[10px]">High Alkaloid Retention</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 h-full min-h-[500px] w-full relative">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUFe3RbG7q3BGDuaSnvhGRou9k3bFYNCpcVfnt5dwsbjNQ-X47n6sEbczaVd0YCn-mNxzZ6azjbI2yt4HuGjImX41_o59SlKPunN1xvaL_vnct3_z64e60ICSFul2PrrH2-GyANQCSxfD0DdkppHiacX0RJakxj7iaSKV-pjegtxDXe28gGfIY9O6It2sHNvc9x9psw_hvcRqwvwbs527bP0gOUoMrtX4LE9gxwR8GHlRYxb5nhSPgy_0FDdb97uNWVBLoHLXupGVS" class="w-full h-full object-cover grayscale brightness-75 opacity-70" alt="Laboratory Analysis">
+                <div class="absolute inset-0 bg-gradient-to-r from-brandDark via-transparent to-transparent"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="cert-modal" class="fixed inset-0 z-[100] flex items-center justify-center px-6">
+    <div class="absolute inset-0 bg-brandDark/95 backdrop-blur-xl" onclick="closeCert()"></div>
+    <div class="relative w-full max-w-4xl bg-sand rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row">
+        <div class="p-12 md:w-1/3 flex flex-col justify-center">
+            <span class="text-terracotta font-black text-[9px] uppercase tracking-widest mb-4">Official Verification</span>
+            <h3 id="modal-title" class="font-heading text-2xl font-bold text-brandDark mb-4">Document</h3>
+            <p id="modal-desc" class="text-brandDark/60 text-sm leading-relaxed mb-8"></p>
+            <button onclick="closeCert()" class="bg-brandDark text-sand py-4 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-terracotta transition-colors">Return to Site</button>
+        </div>
+        <div class="md:w-2/3 bg-white/50 p-8 flex items-center justify-center">
+            <div class="shadow-2xl rounded-lg overflow-hidden border border-brandDark/5">
+                <img id="modal-img" src="" class="max-h-[70vh] w-auto" alt="Full License PNG">
+            </div>
+        </div>
+        <button onclick="closeCert()" class="absolute top-6 right-6 text-brandDark hover:rotate-90 transition-transform duration-500">
+            <span class="material-symbols-rounded text-4xl">close</span>
+        </button>
+    </div>
+</div>
+
+<footer id="contact" class="bg-brandDark pt-20 pb-10 text-sand overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            
+            <div class="footer-reveal space-y-6">
+                <a href="./index.html" class="inline-block">
+                    <img src="logo.png" alt="Satyam Logo" class="h-16 w-auto brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"/>
+                </a>
+                <p class="text-sm leading-relaxed opacity-60">
+                    Bridging the sacred traditions of Ayurveda with the precision of modern science. Sourced from the Himalayas, perfected in our labs.
+                </p>
+                <div class="flex gap-4">
+    <a href="https://wa.me/YOUR_NUMBER" target="_blank" class="p-2 rounded-full border border-sand/10 hover:border-terracotta hover:text-terracotta transition-all">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+        </svg>
+    </a>
+</div>
+            </div>
+
+            <div class="footer-reveal space-y-6">
+                <h4 class="font-heading font-bold text-sm uppercase tracking-widest text-terracotta">Navigation</h4>
+                <ul class="space-y-4 text-sm opacity-60">
+                    <li><a href="./contact.html" class="hover:text-sand hover:opacity-100 transition-all">Contact Us</a></li>
+                    <li><a href="./about-us.html" class="hover:text-sand hover:opacity-100 transition-all">About Us</a></li>
+                    <li><a href="./gallery.html" class="hover:text-sand hover:opacity-100 transition-all">Gallery</a></li>
+                    <li><a href="./licences.html" class="hover:text-sand hover:opacity-100 transition-all">License</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-reveal space-y-6">
+                <h4 class="font-heading font-bold text-sm uppercase tracking-widest text-terracotta">Location</h4>
+                <ul class="space-y-4 text-sm opacity-60">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-terracotta mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-width="2"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2"/></svg>
+                        <span>Satyam ayurvedics<br/>Kachoura, Uttar Pradesh, 204211</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="2"/></svg>
+                        satyamayurvedics98@gmail.com
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-reveal space-y-4">
+                <h4 class="font-heading font-bold text-sm uppercase tracking-widest text-terracotta">Find Us</h4>
+                <div class="w-full h-64 rounded-2xl overflow-hidden grayscale invert opacity-80 hover:grayscale-0 hover:invert-0 hover:opacity-100 transition-all duration-700 shadow-lg border border-white/5">
+                    <iframe
+                        src="https://maps.google.com/maps?width=350&height=313&hl=en&q=Satyam ayurvedics, Kachoura, Uttar Pradesh 204211&t=h&z=12&ie=UTF8&iwloc=B&output=embed"
+                        class="w-full h-full border-0"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest opacity-40">
+            <p>© 2026 Satyam Ayurvedics. All rights reserved.</p>
+            <div class="flex gap-6">
+                <button id="privacy-trigger" class="hover:text-sand transition-colors cursor-pointer">Privacy Policy</button>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- js footer -->
+<script>
+    const footerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const columns = entry.target.querySelectorAll('.footer-reveal');
+            columns.forEach((col, index) => {
+                setTimeout(() => {
+                    col.style.opacity = '1';
+                    col.style.transform = 'translateY(0)';
+                }, index * 150); // 150ms stagger
+            });
+        }
+    });
+}, { threshold: 0.1 });
+
+const footer = document.querySelector('footer');
+document.querySelectorAll('.footer-reveal').forEach(col => {
+    col.style.opacity = '0';
+    col.style.transform = 'translateY(20px)';
+    col.style.transition = 'all 0.8s cubic-bezier(0.22, 1, 0.36, 1)';
+});
+footerObserver.observe(footer);
+</script>
+<!-- js footer end -->
+<script>
+    // Navigation logic
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.onclick = () => mobileMenu.classList.add('active');
+    closeBtn.onclick = () => mobileMenu.classList.remove('active');
+
+    // Modal logic
+    const modal = document.getElementById('cert-modal');
+    const mTitle = document.getElementById('modal-title');
+    const mDesc = document.getElementById('modal-desc');
+    const mImg = document.getElementById('modal-img');
+
+    function openCert(title, img, desc) {
+        mTitle.innerText = title;
+        mImg.src = img;
+        mDesc.innerText = desc;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCert() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Scroll reveal logic
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

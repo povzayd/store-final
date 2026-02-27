@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Satyam Ayurvedics | Purity in Every Particle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="icon" href="./logo.png" type="image/x-icon">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: '#B36A5E',
+                        sand: '#E2D1B3',
+                        brandDark: '#2D2926'
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #E2D1B3; color: #2D2926; scroll-behavior: smooth; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.18); }
+        .organic-frame { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transition: all 1s ease-in-out; }
+        .organic-frame:hover { border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%; transform: scale(1.02); }
+        
+        #mobile-menu { transform: translateX(100%); transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        #mobile-menu.active { transform: translateX(0); }
+
+        .video-container { height: 100vh; position: relative; overflow: hidden; }
+        .video-placeholder {
+            position: absolute; top: 50%; left: 50%;
+            min-width: 100%; min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover; filter: brightness(0.4);
+        }
+        .category-btn.active { background-color: #B36A5E; color: white; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+<nav class="fixed top-0 w-full z-50 glass border-b border-terracotta/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <a href="./index.html">
+                <img src="logo.png" alt="Logo" class="h-12 w-auto object-contain hover:scale-110 transition-transform duration-300"/>
+            </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-10">
+            <a href="./gallery.html" class="hover:text-terracotta transition-colors font-medium">Gallery</a>
+            <a href="./journey.html" class="hover:text-terracotta transition-colors font-medium">Our Journey</a>
+            <a href="./about-us.html" class="hover:text-terracotta transition-colors font-medium">About Us</a>
+            <a href="./contact.html" class="bg-terracotta text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg transition-all">Contact Us</a>
+        </div>
+        <button id="menu-btn" class="md:hidden text-terracotta p-2">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </div>
+</nav>
+
+<div id="mobile-menu" class="fixed inset-0 z-[60] bg-brandDark flex flex-col items-center justify-center space-y-8 md:hidden">
+    <button id="close-btn" class="absolute top-6 right-6 text-sand p-2">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <a href="./gallery.html" class="mobile-link text-3xl text-sand font-heading">Gallery</a>
+    <a href="./journey.html" class="mobile-link text-3xl text-sand font-heading">Our Journey</a>
+    <a href="./about-us.html" class="mobile-link text-3xl text-sand font-heading">About Us</a>
+    <a href="./contact.html" class="mobile-link text-3xl text-terracotta font-heading font-bold">Contact Us</a>
+</div>
+
+<section class="video-container flex items-center justify-center text-center px-6">
+    <video autoplay loop muted playsinline class="video-placeholder">
+        <source src="./gallery/bg.mp4" type="video/mp4"/>
+    </video>
+    <div class="relative z-10 max-w-5xl">
+        <h1 class="font-heading text-5xl md:text-8xl text-white font-extrabold mb-8 leading-tight">
+            Purity in Every <span class="text-terracotta italic">Particle</span>
+        </h1>
+        <div class="flex flex-col sm:row gap-5 justify-center">
+            <a href="#our-legacy" class="bg-white text-terracotta px-10 py-4 rounded-full font-bold text-lg hover:bg-terracotta hover:text-white transition-all">Our Journey</a>
+        </div>
+    </div>
+</section>
+
+<section id="our-legacy" class="py-24 px-6 bg-white/40">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+            <div class="w-full lg:w-5/12 relative">
+                <div class="organic-frame w-full aspect-[4/5] bg-terracotta/20 overflow-hidden shadow-2xl">
+                    <img src="owner.jpg" alt="Dr. Ashish Raghav" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-6 -right-6 bg-brandDark text-sand p-6 rounded-2xl shadow-xl">
+                    <p class="text-3xl font-heading font-bold text-terracotta">1958</p>
+                    <p class="text-[10px] uppercase tracking-widest opacity-70">Established</p>
+                </div>
+            </div>
+            <div class="w-full lg:w-7/12 space-y-8">
+                <div>
+                    <span class="text-terracotta font-bold tracking-widest uppercase text-sm">Our Heritage</span>
+                    <h2 class="font-heading text-4xl md:text-5xl text-brandDark font-extrabold mt-2">Preserving the Soul of <span class="italic">Classical Ayurveda</span></h2>
+                </div>
+                <div class="space-y-6 text-brandDark/80 leading-relaxed text-lg">
+                    <p>Established in 1958 in Kachaura by <strong>Mr. Satendra Raghav</strong>, Satyam Ayurvedics specializes in classical formulations like <strong>Bhasma, Kuppipakva Rasayan, and Guggulu</strong>.</p>
+                    <p>Now managed by <strong>Dr. Ashish Raghav (BAMS)</strong>, we continue to deliver pure, effective medicines prepared via time-tested procedures.</p>
+                </div>
+                <div class="pt-4">
+                    <p class="font-heading font-bold text-brandDark text-xl">Dr. Ashish Raghav</p>
+                    <p class="text-terracotta font-medium uppercase tracking-widest text-xs">Managing Director | BAMS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="products" class="py-24 px-6 bg-sand/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="font-heading text-4xl font-bold text-brandDark">Our Pharmacopoeia</h2>
+            <p class="mt-4 text-brandDark/60">Select a category to learn about our traditional manufacturing methods.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+            <button onclick="filterProducts('rasayan')" class="category-btn active px-6 py-2 rounded-full border border-terracotta text-sm font-bold transition-all">Kupipakva Rasayan</button>
+            <button onclick="filterProducts('bhasma')" class="category-btn px-6 py-2 rounded-full border border-terracotta text-sm font-bold transition-all">Bhasma & Pishti</button>
+            <button onclick="filterProducts('vati')" class="category-btn px-6 py-2 rounded-full border border-terracotta text-sm font-bold transition-all">Gutika & Vati</button>
+            <button onclick="filterProducts('guggul')" class="category-btn px-6 py-2 rounded-full border border-terracotta text-sm font-bold transition-all">Guggul Yog</button>
+        </div>
+
+        <div id="category-context" class="bg-white/60 p-8 rounded-[30px] border border-terracotta/20 mb-12 animate-fade-in">
+            <h3 id="context-title" class="font-heading font-bold text-2xl text-terracotta mb-4">Kupipakva Rasayan</h3>
+            <p id="context-text" class="text-brandDark/80 leading-relaxed italic">
+                These are mercurial preparations processed in a glass flask (Kupi) using a specialized heating furnace (Valuka Yantra). They are known for their high potency and long shelf life.
+            </p>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </div>
+</section>
+
+<script>
+    const productData = {
+        rasayan: {
+            title: "Kupipakva Rasayan",
+            context: "Advanced mercurial formulations processed in glass flasks over several days to ensure deep cellular penetration and rejuvenation.",
+            items: ["Rasa Sindoor", "Makaradhwaja", "Swarna Vanga"]
+        },
+        bhasma: {
+            title: "Bhasma & Pishti",
+            context: "Pure minerals and gems converted into nano-particles through the 'Puta' system of heating, making them bio-available and safe for the human body.",
+            items: ["Swarn Bhasma", "Mukta Pishti", "Abhrak Bhasma"]
+        },
+        vati: {
+            title: "Gutika & Vati",
+            context: "Potent herbal and herbo-mineral tablets prepared by grinding ingredients with specific decoctions to enhance medicinal properties.",
+            items: ["Chandraprabha Vati", "Arogyavardhini Vati"]
+        },
+        guggul: {
+            title: "Guggul Preparations",
+            context: "Formulations where Guggul resin is purified and mixed with herbs to treat inflammatory conditions and metabolic disorders.",
+            items: ["Triphala Guggul", "Kanchanar Guggul"]
+        }
+    };
+
+    function filterProducts(cat) {
+        // Update Buttons
+        document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        // Update Context
+        const data = productData[cat];
+        document.getElementById('context-title').innerText = data.title;
+        document.getElementById('context-text').innerText = data.context;
+
+        // Update Products
+        const grid = document.getElementById('product-grid');
+        grid.innerHTML = data.items.map(item => `
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-terracotta/5 hover:shadow-md transition-all group">
+                <div class="h-2 w-12 bg-terracotta mb-4 rounded-full"></div>
+                <h4 class="font-heading font-bold text-lg text-brandDark">${item}</h4>
+                <p class="text-xs text-terracotta uppercase tracking-widest mt-1">Classical Formulation</p>
+            </div>
+        `).join('');
+    }
+
+    // Initialize with first category
+    window.onload = () => filterProducts('rasayan');
+</script>
+<footer class="bg-brandDark pt-20 pb-10 text-sand overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 text-center border-t border-white/5 pt-8">
+        <p>© 2026 Satyam Ayurvedics. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
